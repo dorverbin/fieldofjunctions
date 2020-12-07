@@ -65,6 +65,8 @@ for i in range(foj.num_iters):
     foj.step(i)
 ```
 
+See Python notebook in the `examples/` folder for a full running example.
+
 ### Boundary maps
 
 In order to compute the (global) boundary maps for a given field of junctions object `foj`:
