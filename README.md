@@ -30,15 +30,15 @@ foj = FieldOfJunctions(img, opts)
 foj.optimize()
 ```
 
-In addition to the input image, the FieldOfJunctions class requires an object with the following fields:
+In addition to the input image, the `FieldOfJunctions` class requires an object `opts` with the following fields:
 ```
 R                          Patch size
 stride                     Stride for junctions (e.g. opts.stride == 1 is a dense field of junctions)
-eta                        Width parameter for Heaviside functions
-delta                      Width parameter for boundary maps
-lr_angles                  Angle learning rate
-lr_x0y0                    Vertex position learning rate
-lambda_final               Final value of spatial consistency term
+eta                        Width of Heaviside functions
+delta                      Width of boundary maps
+lr_angles                  Learning rate of angles
+lr_x0y0                    Learning rate of vertex positions
+lambda_final               Final value of spatial consistency weight lambda
 nvals                      Number of values to query in Algorithm 2 from the paper
 num_initialization_iters   Number of initialization iterations
 num_refinement_iters       Number of refinement iterations
@@ -47,7 +47,7 @@ parallel_mode              Whether or not to run Algorithm 2 in parallel over al
 ```
 
 Instead of using `foj.optimize()` which executes the entire optimization scheme, it is possible to access the field of junctions
-during optimization by using:
+during optimization by using the following equivalent code snippet:
 ```
 foj = FieldOfJunctions(img, opts)
 for i in range(foj.num_iters):
@@ -56,7 +56,7 @@ for i in range(foj.num_iters):
 
 ### Boundary maps
 
-In order to compute the (global) boundary maps for a given field of junctions object:
+In order to compute the (global) boundary maps for a given field of junctions object `foj`:
 
 ```
 params = torch.cat([foj.angles, foj.x0y0], dim=1)
@@ -67,7 +67,7 @@ global_boundaries = foj.local2global(local_boundaries)[0, 0, :, :].detach().cpu(
 
 ### Boundary-aware smoothing
 
-In order to compute the boundary aware-smoothing of the input image, use:
+In order to compute the boundary aware-smoothing of the input image given `foj`, use:
 ```
 params = torch.cat([foj.angles, foj.x0y0], dim=1)
 dists, patches = foj.get_dists_and_patches(params)

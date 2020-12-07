@@ -367,7 +367,8 @@ class FieldOfJunctions:
         angle2 = angles[:, 1, :, :].unsqueeze(1).unsqueeze(1)   # shape [N, 1, 1, H', W']
         angle3 = angles[:, 2, :, :].unsqueeze(1).unsqueeze(1)   # shape [N, 1, 1, H', W']
 
-        # define another angle halfway between angle3 and angle1, clockwise from angle3
+        # Define another angle halfway between angle3 and angle1, clockwise from angle3
+        # This isn't critical but it seems a bit more stable for computing gradients
         angle4 = 0.5 * (angle1 + angle3) + \
                      torch.where(torch.remainder(0.5 * (angle1 - angle3), 2 * np.pi) >= np.pi,
                                  torch.ones_like(angle1) * np.pi, torch.zeros_like(angle1))
