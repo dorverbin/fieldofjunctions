@@ -33,7 +33,7 @@ foj.optimize()
 In addition to the input image, the `FieldOfJunctions` class requires an object `opts` with the following fields:
 ```
 R                          Patch size
-stride                     Stride for junctions (e.g. opts.stride == 1 is a dense field of junctions)
+stride                     Stride of field of junctions (e.g. opts.stride == 1 is dense)
 eta                        Width of Heaviside functions
 delta                      Width of boundary maps
 lr_angles                  Learning rate of angles
