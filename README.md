@@ -46,6 +46,10 @@ greedy_step_every_iters    Frequency of "greedy" iteration (applying Algorithm 2
 parallel_mode              Whether or not to run Algorithm 2 in parallel over all `nvals` values.
 ```
 
+Note that setting `parallel_mode` to `True` typically results in faster optimization, but requires more memory during
+initialization. For large images on a GPU with limited memory, you might need to set `parallel_mode` to `False`.
+
+
 Instead of using `foj.optimize()` which executes the entire optimization scheme, it is possible to access the field of junctions
 during optimization by using the following equivalent code snippet:
 ```
