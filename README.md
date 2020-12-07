@@ -1,3 +1,9 @@
+<img src="https://user-images.githubusercontent.com/15837806/101304973-87445780-380f-11eb-80ea-3cb693f381d4.png"
+     alt="Input image"
+     style="float: left; margin-right: 10px;" />
+<img src="https://user-images.githubusercontent.com/15837806/101304974-87445780-380f-11eb-87ef-3c7c590ff139.gif"
+     alt="Input image"
+     style="float: left; margin-right: 10px;" />
 
 # Field of Junctions
 
@@ -26,6 +32,7 @@ Our code is implemented in pytorch. It has been tested using pytorch 1.6 but it 
 
 To analyze an `HxWxC` image into its field of junctions, you can simply run the following code snippet:
 ```
+from field_of_junctions import FieldOfJunctions
 foj = FieldOfJunctions(img, opts)
 foj.optimize()
 ```
