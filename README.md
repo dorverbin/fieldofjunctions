@@ -1,8 +1,8 @@
-<img src="https://user-images.githubusercontent.com/15837806/101304973-87445780-380f-11eb-80ea-3cb693f381d4.png"
+<img src="https://user-images.githubusercontent.com/15837806/101306054-f28f2900-3811-11eb-99eb-cf6bc0d56b9c.png"
      alt="Input image"
      style="float: left; margin-right: 10px;" />
-<img src="https://user-images.githubusercontent.com/15837806/101304974-87445780-380f-11eb-87ef-3c7c590ff139.gif"
-     alt="Input image"
+<img src="https://user-images.githubusercontent.com/15837806/101306056-f327bf80-3811-11eb-9a38-1fd7d0bc7bae.gif"
+     alt="Optimization"
      style="float: left; margin-right: 10px;" />
 
 # Field of Junctions
