@@ -13,7 +13,7 @@ This repository contains code for:
 <br>
 [Dor Verbin](https://scholar.harvard.edu/dorverbin) and [Todd Zickler](http://www.eecs.harvard.edu/~zickler/)
 <br>
-
+arXiv:2011.13866, 2020
 
 Please contact us by email for questions about our paper or code.
 
@@ -64,6 +64,8 @@ foj = FieldOfJunctions(img, opts)
 for i in range(foj.num_iters):
     foj.step(i)
 ```
+
+See Python notebook in the `examples/` folder for a full usage example.
 
 ### Boundary maps
 
