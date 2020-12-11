@@ -104,8 +104,11 @@ class FieldOfJunctions:
         """
         
         # Linearly increase lambda from 0 to lambda_final
-        lmbda = max([0, (iteration - self.opts.num_initialization_iters) / (self.opts.num_refinement_iters - 1)]) \
-                * self.opts.lambda_final
+        if self.opts.num_refinement_iters <= 1:
+            factor = 0.0
+        else:
+            factor = max([0, (iteration - self.opts.num_initialization_iters) / (self.opts.num_refinement_iters - 1)])
+        lmbda = factor * self.opts.lambda_final
         
         if iteration < self.opts.num_initialization_iters or \
                (iteration - self.opts.num_initialization_iters + 1) % self.opts.greedy_step_every_iters == 0:
