@@ -80,7 +80,7 @@ global_boundaries = foj.local2global(local_boundaries)[0, 0, :, :].detach().cpu(
 
 ### Boundary-aware smoothing
 
-In order to compute the boundary aware-smoothing of the input image given `foj`, use:
+In order to compute the boundary-aware smoothing of the input image given `foj`, use:
 ```
 params = torch.cat([foj.angles, foj.x0y0], dim=1)
 dists, patches = foj.get_dists_and_patches(params)
