@@ -7,9 +7,11 @@
 
 # Field of Junctions
 
+### [Project Page](http://vision.seas.harvard.edu/foj/) | [Paper](https://arxiv.org/abs/2011.13866) | [Video](https://youtu.be/M0VwBw_aVQA)
+
 This repository contains code for:
 
-**[Field of Junctions](http://vision.seas.harvard.edu/foj/)**
+**[Field of Junctions: Extracting Boundary Structure at Low SNR](http://vision.seas.harvard.edu/foj/)**
 <br>
 [Dor Verbin](https://scholar.harvard.edu/dorverbin) and [Todd Zickler](http://www.eecs.harvard.edu/~zickler/)
 <br>
