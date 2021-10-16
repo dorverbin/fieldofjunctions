@@ -7,6 +7,8 @@
 
 # Field of Junctions
 
+### [Project Page](http://vision.seas.harvard.edu/foj/) | [Paper](https://arxiv.org/abs/2011.13866) | [Video](https://youtu.be/M0VwBw_aVQA)
+
 This repository contains code for:
 
 **[Field of Junctions: Extracting Boundary Structure at Low SNR](http://vision.seas.harvard.edu/foj/)**
@@ -82,7 +84,7 @@ global_boundaries = foj.local2global(local_boundaries)[0, 0, :, :].detach().cpu(
 
 ### Boundary-aware smoothing
 
-In order to compute the boundary aware-smoothing of the input image given `foj`, use:
+In order to compute the boundary-aware smoothing of the input image given `foj`, use:
 ```
 params = torch.cat([foj.angles, foj.x0y0], dim=1)
 dists, _, patches = foj.get_dists_and_patches(params)
