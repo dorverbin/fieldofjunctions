@@ -9,11 +9,12 @@
 
 This repository contains code for:
 
-**[Field of Junctions](http://vision.seas.harvard.edu/foj/)**
+**[Field of Junctions: Extracting Boundary Structure at Low SNR](http://vision.seas.harvard.edu/foj/)**
 <br>
 [Dor Verbin](https://scholar.harvard.edu/dorverbin) and [Todd Zickler](http://www.eecs.harvard.edu/~zickler/)
 <br>
-arXiv:2011.13866, 2020
+International Conference on Computer Vision (ICCV), 2021.
+
 
 Please contact us by email for questions about our paper or code.
 
@@ -45,7 +46,8 @@ eta                        Width of Heaviside functions
 delta                      Width of boundary maps
 lr_angles                  Learning rate of angles
 lr_x0y0                    Learning rate of vertex positions
-lambda_final               Final value of spatial consistency weight lambda
+lambda_boundary_final      Final value of spatial boundary consistency weight lambda_B
+lambda_color_final         Final value of spatial color consistency weight lambda_C
 nvals                      Number of values to query in Algorithm 2 from the paper
 num_initialization_iters   Number of initialization iterations
 num_refinement_iters       Number of refinement iterations
@@ -73,7 +75,7 @@ In order to compute the (global) boundary maps for a given field of junctions ob
 
 ```
 params = torch.cat([foj.angles, foj.x0y0], dim=1)
-dists, patches = foj.get_dists_and_patches(params)
+dists, _, patches = foj.get_dists_and_patches(params)
 local_boundaries = foj.dists2boundaries(dists)
 global_boundaries = foj.local2global(local_boundaries)[0, 0, :, :].detach().cpu().numpy()
 ```
@@ -83,7 +85,7 @@ global_boundaries = foj.local2global(local_boundaries)[0, 0, :, :].detach().cpu(
 In order to compute the boundary aware-smoothing of the input image given `foj`, use:
 ```
 params = torch.cat([foj.angles, foj.x0y0], dim=1)
-dists, patches = foj.get_dists_and_patches(params)
+dists, _, patches = foj.get_dists_and_patches(params)
 smoothed_img = foj.local2global(patches)[0, :, :, :].permute(1, 2, 0).detach().cpu().numpy()
 ```        
 
@@ -95,10 +97,12 @@ smoothed_img = foj.local2global(patches)[0, :, :, :].permute(1, 2, 0).detach().c
 
 For citing our paper, please use:
 ```
-@article{verbin2020foj,
+@InProceedings{Verbin_2021_ICCV,
 author = {Verbin, Dor and Zickler, Todd},
-title = {Field of Junctions},
-journal = {arXiv preprint arXiv:2011.13866},
-year = {2020}
+title = {Field of Junctions: Extracting Boundary Structure at Low {SNR}},
+booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+month = {October},
+year = {2021},
+pages = {6869-6878}
 }
 ```
