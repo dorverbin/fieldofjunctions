@@ -94,7 +94,7 @@ smoothed_img = foj.local2global(patches)[0, :, :, :].permute(1, 2, 0).detach().c
 
 ## Data
 
-A zip file containing all of our synthetic data is available [here](http://vision.seas.harvard.edu/foj/dataset/foj_data.zip). It contains the 300 images we used for quantitatively evaluating our algorithm, as well as ground truth locations of edges and corners/junctions.
+A zip file containing all of our synthetic data is available [here](https://vision.seas.harvard.edu/foj/dataset/foj_data.zip). It contains the 300 images we used for quantitatively evaluating our algorithm, as well as ground truth locations of edges and corners/junctions.
 
 
 ## Citation
