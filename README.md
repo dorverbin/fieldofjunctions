@@ -92,14 +92,16 @@ smoothed_img = foj.local2global(patches)[0, :, :, :].permute(1, 2, 0).detach().c
 ```        
 
 
-## Data (coming soon)
+## Data
+
+A zip file containing all of our synthetic data is available [here](http://vision.seas.harvard.edu/foj/dataset/foj_data.zip). It contains the 300 images we used for quantitatively evaluating our algorithm, as well as ground truth locations of edges and corners/junctions.
 
 
 ## Citation
 
 For citing our paper, please use:
 ```
-@InProceedings{Verbin_2021_ICCV,
+@InProceedings{verbin2021foj,
 author = {Verbin, Dor and Zickler, Todd},
 title = {Field of Junctions: Extracting Boundary Structure at Low {SNR}},
 booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
