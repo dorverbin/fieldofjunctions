@@ -20,6 +20,7 @@ International Conference on Computer Vision (ICCV), 2021.
 
 Please contact us by email for questions about our paper or code.
 
+🐣:  An interactive of demo available at Replicate: <a href="https://replicate.com/dorverbin/fieldofjunctions"><img src="https://replicate.com/dorverbin/fieldofjunctions/badge"></a>
 
 
 ## Requirements
